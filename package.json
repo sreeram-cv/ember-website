@@ -23,6 +23,7 @@
     "lint:hbs:fix": "ember-template-lint . --fix",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
+    "lint:spell": "cspell \"**/*.{js,ts,hbs,md,html,css}\" --no-progress",
     "start": "ember serve",
     "test": "ember test"
   },
@@ -40,6 +41,7 @@
     "broccoli-asset-rev": "^3.0.0",
     "broccoli-merge-trees": "^4.2.0",
     "broccoli-static-site-json": "^4.4.1",
+    "cspell": "^8.18.1",
     "dayjs": "^1.10.7",
     "deepmerge": "^4.0.0",
     "ember-a11y-testing": "^4.3.0",

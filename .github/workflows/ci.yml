@@ -30,6 +30,23 @@ jobs:
       - run: pnpm i --frozen-lockfile
       - run: pnpm run lint
 
+  spellcheck:
+    name: Check spelling
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          cache: 'pnpm'
+          node-version: ${{ env.NODE_VERSION }}
+      - run: pnpm i --frozen-lockfile
+      - name: Install cspell
+        run: pnpm add -D cspell
+      - name: Run spellcheck
+        run: npx cspell "**/*.{js,ts,hbs,md,html,css}" --no-progress
+
   test-app:
     name: Test app
     runs-on: ubuntu-latest

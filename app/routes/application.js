@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
-export default class AplicationRoute extends Route {
+export default class ApplicationRoute extends Route {
   @service navbar;
   @service metrics;
   @service fastboot;
